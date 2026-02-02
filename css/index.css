@@ -58,16 +58,14 @@ a:hover {
   gap: 20px;
 }
 
-.job-header-row,
-.Title {
+.job-header-row.Title {
   flex: 1;
-  align-items: left;
+  align-items: flex-start;
 }
 
-.job-header-row,
-.Duration {
+.job-header-row.Duration {
   flex: 1;
-  align-items: right;
+  align-items: flex-end;
 }
 
 .connect {
