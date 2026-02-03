@@ -46,16 +46,19 @@ a:hover {
 }
 
 .nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  grid-template-rows: 50px;
   justify-content: center;
-  gap: 30px;
   margin-bottom: 20px;
 }
 
 .job-header-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 250px 300px;
+  column-gap: 5px;
+  grid-template-rows: 20px;
   align-items: center;
-  gap: 20px;
 }
 
 .job-header-row.Title {
@@ -72,4 +75,35 @@ a:hover {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    grid-template-columns: repeat(auto-fit, minmax(90px, auto));
+    grid-template-rows: 50px;
+    column-gap: 1 rem;
+    background-color: orange;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  .nav {
+    grid-template-columns: repeat(auto-fit, minmax(80px, auto));
+    grid-template-rows: 50px;
+    column-gap: 5rem;
+    margin: 3rem;
+    background-color: rgb(194, 234, 214);
+  }
+
+  h1 {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: bold;
+  }
 }
