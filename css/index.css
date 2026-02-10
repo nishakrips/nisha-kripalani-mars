@@ -61,14 +61,14 @@ a:hover {
   align-items: center;
 }
 
-.job-header-row.Title {
+.job-header-row .title {
   flex: 1;
-  align-items: flex-start;
+  text-align: left;
 }
 
-.job-header-row.Duration {
+.job-header-row .duration {
   flex: 1;
-  align-items: flex-end;
+  text-align: right;
 }
 
 .connect {
