@@ -15,6 +15,7 @@
       <a href="#Connect">Connect</a>
       <a href="#Skills">Skills</a>
       <a href="#Projects">Projects</a>
+      <a href="#leave_message">Leave a Message</a>
     </nav>
     <h1>Nisha Kripalani</h1>
     <section id="About">
@@ -70,6 +71,22 @@
         <li>Project 1: CTD Pre-work</li>
         <li>Project 2: CTD HTML/CSS Basics</li>
       </ul>
+    </section>
+    <section>
+      <h2>Leave a Message</h2>
+      <form id="leave_message">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="usersName" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="usersEmail" required />
+        <label for="message">Message:</label>
+        <textarea id="message" name="usersMessage" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <section id="messages">
+      <h2>Messages</h2>
+      <ul id="messagesList"></ul>
     </section>
     <script src="js/index.js"></script>
   </body>
