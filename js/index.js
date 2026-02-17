@@ -25,3 +25,30 @@ for (let i = 0; i < skills.length; i++) {
   skillDivItem.textContent = skill
   skillsDiv.appendChild(skillDivItem)
 }
+
+const messageSection = document.getElementById("messages")
+const messageList = messageSection.querySelector("ul")
+messageSection.hidden = messageList.children.length === 0
+const messageForm = document.getElementsByName("messageInput")[0]
+messageForm.addEventListener("submit", function (event) {
+  event.preventDefault()
+  const nameInput = event.target.usersName
+  console.log("Name:", nameInput.value)
+  const emailInput = event.target.usersEmail
+  console.log("Email:", emailInput.value)
+  const messageInput = event.target.usersMessage
+  console.log("Message:", messageInput.value)
+  const newMessage = document.createElement("li")
+  newMessage.innerHTML = `<a href="mailto:${emailInput.value}">${nameInput.value}</a> : <span>${messageInput.value} </span>`
+  const removeButton = document.createElement("button")
+  removeButton.innerText = "remove"
+  removeButton.addEventListener("click", function () {
+    const entry = removeButton.parentNode
+    entry.remove()
+    messageSection.hidden = messageList.children.length === 0
+  })
+  newMessage.appendChild(removeButton)
+  messageList.appendChild(newMessage)
+  messageSection.hidden = messageList.children.length === 0
+  messageForm.reset()
+})

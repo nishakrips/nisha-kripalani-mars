@@ -70,7 +70,7 @@
     </section>
     <section>
       <h2>Leave a Message</h2>
-      <form id="leave_message">
+      <form id="leave_message" name="messageInput">
         <label for="name">Name:</label>
         <input type="text" id="name" name="usersName" required />
         <label for="email">Email:</label>
@@ -80,7 +80,7 @@
         <button type="submit">Submit</button>
       </form>
     </section>
-    <section id="messages">
+    <section id="messages" hidden>
       <h2>Messages</h2>
       <ul id="messagesList"></ul>
     </section>
