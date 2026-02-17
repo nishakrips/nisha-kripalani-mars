@@ -1,10 +1,9 @@
 const today = new Date()
 const thisYear = today.getFullYear()
-const footerElement = document.createElement("footer")
+const footer = document.querySelector("footer")
 const copyright = document.createElement("p")
 copyright.innerHTML = `© Nisha Kripalani ${thisYear}`
-footerElement.appendChild(copyright)
-document.body.appendChild(footerElement)
+footer.appendChild(copyright)
 
 const skills = ["JavaScript", "HTML", "CSS", "Adobe Photoshop", "GitHub"]
 const skillsSection = document.getElementById("Skills")
