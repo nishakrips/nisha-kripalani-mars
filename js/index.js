@@ -52,3 +52,23 @@ messageForm.addEventListener("submit", function (event) {
   messageSection.hidden = messageList.children.length === 0
   messageForm.reset()
 })
+
+const githubRepos = async () => {
+  const res = await fetch("https://api.github.com/users/nishakrips/repos")
+  const repositories = await res.json()
+  // console.log(repositories)
+  return repositories
+}
+
+const projectsSection = document.getElementById("Projects")
+const projectList = projectsSection.querySelector("ul")
+
+githubRepos().then((repos) => {
+  console.log("Repositories:", repos)
+  for (let i = 0; i < repos.length; i++) {
+    const repo = repos[i]
+    const project = document.createElement("li")
+    project.innerText = repo.name
+    projectList.appendChild(project)
+  }
+})
