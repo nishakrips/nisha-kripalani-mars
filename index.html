@@ -15,6 +15,7 @@
       <a href="#Connect">Connect</a>
       <a href="#Skills">Skills</a>
       <a href="#Projects">Projects</a>
+      <a href="#leave_message">Leave a Message</a>
     </nav>
     <h1>Nisha Kripalani</h1>
     <section id="About">
@@ -41,6 +42,14 @@
         </div>
       </div>
     </section>
+    <section id="Skills">
+      <h2>Skills</h2>
+      <ul></ul>
+    </section>
+    <section id="SkillsWithGrid">
+      <h2>Skills displayed in a Grid</h2>
+      <div></div>
+    </section>
     <section id="Connect">
       <h2>Connect</h2>
       <div class="connect">
@@ -52,10 +61,6 @@
       </div>
       <p>Feel free to reach out for more information!</p>
     </section>
-    <section id="Skills">
-      <h2>Skills</h2>
-      <p>HTML, CSS, JavaScript, Git/Github</p>
-    </section>
     <section id="Projects">
       <h2>Projects</h2>
       <ul>
@@ -63,5 +68,23 @@
         <li>Project 2: CTD HTML/CSS Basics</li>
       </ul>
     </section>
+    <section>
+      <h2>Leave a Message</h2>
+      <form id="leave_message" name="messageInput">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="usersName" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="usersEmail" required />
+        <label for="message">Message:</label>
+        <textarea id="message" name="usersMessage" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <section id="messages" hidden>
+      <h2>Messages</h2>
+      <ul id="messagesList"></ul>
+    </section>
+    <footer></footer>
+    <script src="js/index.js"></script>
   </body>
 </html>
