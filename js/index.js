@@ -29,7 +29,7 @@ for (let i = 0; i < skills.length; i++) {
 const messageSection = document.getElementById("messages")
 const messageList = messageSection.querySelector("ul")
 messageSection.hidden = messageList.children.length === 0
-const messageForm = document.getElementsByName("messageInput")[0]
+const messageForm = document.getElementById("leave_message")
 messageForm.addEventListener("submit", function (event) {
   event.preventDefault()
   const nameInput = event.target.usersName
@@ -42,6 +42,7 @@ messageForm.addEventListener("submit", function (event) {
   newMessage.innerHTML = `<a href="mailto:${emailInput.value}">${nameInput.value}</a> : <span>${messageInput.value} </span>`
   const removeButton = document.createElement("button")
   removeButton.innerText = "remove"
+  removeButton.setAttribute("type", "button")
   removeButton.addEventListener("click", function () {
     const entry = removeButton.parentNode
     entry.remove()
