@@ -55,16 +55,20 @@ messageForm.addEventListener("submit", function (event) {
 })
 
 const githubRepos = async () => {
-  const res = await fetch("https://api.github.com/users/nishakrips/repos")
-  const repositories = await res.json()
-  // console.log(repositories)
-  return repositories
+  try {
+    const res = await fetch("https://api.github.com/users/nishakrips/repos")
+    const repositories = await res.json()
+    // console.log(repositories)
+    return repositories
+  } catch (error) {
+    console.error("Error fetching repositories:", error)
+  }
 }
 
 const projectsSection = document.getElementById("Projects")
 const projectList = projectsSection.querySelector("ul")
 
-githubRepos().then((repos) => {
+const displayRepos = (repos) => {
   console.log("Repositories:", repos)
   for (let i = 0; i < repos.length; i++) {
     const repo = repos[i]
@@ -72,4 +76,8 @@ githubRepos().then((repos) => {
     project.innerText = repo.name
     projectList.appendChild(project)
   }
-})
+}
+
+githubRepos()
+  .then((repos) => displayRepos(repos))
+  .catch((error) => console.error("Error fetching repositories:", error))
