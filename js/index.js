@@ -56,10 +56,9 @@ messageForm.addEventListener("submit", function (event) {
 
 const githubRepos = async () => {
   try {
+    // throw new Error("Simulated error for testing")
     const res = await fetch("https://api.github.com/users/nishakrips/repos")
-    const repositories = await res.json()
-    // console.log(repositories)
-    return repositories
+    return res.json()
   } catch (error) {
     console.error("Error fetching repositories:", error)
   }
@@ -70,6 +69,12 @@ const projectList = projectsSection.querySelector("ul")
 
 const displayRepos = (repos) => {
   console.log("Repositories:", repos)
+  if (!repos || repos.length === 0) {
+    const noReposMessage = document.createElement("p")
+    noReposMessage.textContent = "No repositories found."
+    projectsSection.appendChild(noReposMessage)
+    return
+  }
   for (let i = 0; i < repos.length; i++) {
     const repo = repos[i]
     const project = document.createElement("li")
@@ -79,5 +84,5 @@ const displayRepos = (repos) => {
 }
 
 githubRepos()
-  .then((repos) => displayRepos(repos))
-  .catch((error) => console.error("Error fetching repositories:", error))
+  .then(displayRepos)
+  .catch((error) => console.error("Error:", error))
