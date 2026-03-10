@@ -53,3 +53,36 @@ messageForm.addEventListener("submit", function (event) {
   messageSection.hidden = messageList.children.length === 0
   messageForm.reset()
 })
+
+const githubRepos = async () => {
+  try {
+    // throw new Error("Simulated error for testing")
+    const res = await fetch("https://api.github.com/users/nishakrips/repos")
+    return res.json()
+  } catch (error) {
+    console.error("Error fetching repositories:", error)
+  }
+}
+
+const projectsSection = document.getElementById("Projects")
+const projectList = projectsSection.querySelector("ul")
+
+const displayRepos = (repos) => {
+  console.log("Repositories:", repos)
+  if (!repos || repos.length === 0) {
+    const noReposMessage = document.createElement("p")
+    noReposMessage.textContent = "No repositories found."
+    projectsSection.appendChild(noReposMessage)
+    return
+  }
+  for (let i = 0; i < repos.length; i++) {
+    const repo = repos[i]
+    const project = document.createElement("li")
+    project.innerText = repo.name
+    projectList.appendChild(project)
+  }
+}
+
+githubRepos()
+  .then(displayRepos)
+  .catch((error) => console.error("Error:", error))

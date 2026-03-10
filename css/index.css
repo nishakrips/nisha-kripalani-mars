@@ -17,7 +17,6 @@ h2 {
   text-align: left;
   font-size: 30px;
   font-weight: bold;
-  margin-top: 10px;
   color: darkviolet;
 }
 section {
@@ -37,7 +36,7 @@ a {
   font-weight: bold; /* Makes text bold */
 }
 a:link {
-  color: blue;
+  color: darkviolet;
 }
 a:visited {
   color: purple;
@@ -57,7 +56,6 @@ a:hover {
   margin-bottom: 20px;
 }
 
-/* For Desktop Display  */
 .job-header-row {
   display: grid;
   grid-template-columns: 250px 300px;
@@ -78,6 +76,12 @@ a:hover {
   display: grid;
   grid-template-columns: 400px 300px;
   column-gap: 1rem;
+}
+
+#Projects {
+  display: grid;
+  grid: repeat(1, minmax(50px, auto)) / repeat(1, minmax(50px, auto));
+  row-gap: 0.5rem;
 }
 
 #leave_message {
@@ -138,7 +142,7 @@ a:hover {
     grid-template-rows: 50px;
     column-gap: 3rem;
     margin: 3rem;
-    background-color: rgb(194, 234, 214);
+    background-color: #a097a4;
   }
 
   h1 {
