@@ -36,7 +36,7 @@ a {
   font-weight: bold; /* Makes text bold */
 }
 a:link {
-  color: blue;
+  color: darkviolet;
 }
 a:visited {
   color: purple;
@@ -142,7 +142,7 @@ a:hover {
     grid-template-rows: 50px;
     column-gap: 3rem;
     margin: 3rem;
-    background-color: rgb(194, 234, 214);
+    background-color: #a097a4;
   }
 
   h1 {
